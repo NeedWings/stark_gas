@@ -1,7 +1,7 @@
-from starknet_py.net.gateway_client import GatewayClient
-from starknet_py.net.networks import MAINNET
+from starknet_py.net.full_node_client import FullNodeClient
+
  
-client = GatewayClient(MAINNET)
+client = FullNodeClient("https://starknet-mainnet.public.blastapi.io")
 async def main():
     while True:
         print((await client.get_block()).gas_price/1e9)
